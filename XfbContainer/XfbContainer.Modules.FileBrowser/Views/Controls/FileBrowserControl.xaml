@@ -5,10 +5,145 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:prism="http://prismlibrary.com/"
              mc:Ignorable="d"
-             d:DesignHeight="300"
-             d:DesignWidth="300"
-             prism:ViewModelLocator.AutoWireViewModel="True">
-    <Grid>
-
+             d:DesignHeight="670"
+             d:DesignWidth="620"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             BorderThickness="2.5"
+             Margin="2.5"
+             Background="Black">
+    <UserControl.Resources>
+        <!--MainGrid-->
+        <Style TargetType="Grid"
+               x:Key="FBC_MainGridStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Background" Value="#0A1111"/>
+            </Style.Setters>
+        </Style>
+        <!--MainGrid-->
+        <!--Buttons-->
+        <Style TargetType="Button"
+               x:Key="FBC_OpenFolderBtnStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border>
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Style.Setters>
+                                            <Setter Property="ToolTip">
+                                                <Setter.Value>
+                                                    <ToolTip Content="Open Folder"
+                                                             Background="Black"
+                                                             BorderBrush="Firebrick"
+                                                             Foreground="Firebrick"
+                                                             ToolTipService.HasDropShadow="True"
+                                                             ToolTipService.Placement="Bottom">
+                                                    </ToolTip>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Margin" Value="1.5"/>
+                                            <Setter Property="Opacity" Value="0.95"/>
+                                            <Setter Property="MaxHeight" Value="30"/>
+                                            <Setter Property="CornerRadius" Value="5"/>
+                                            <Setter Property="BorderThickness" Value="2"/>
+                                            <Setter Property="Background" Value="LimeGreen"/>
+                                            <Setter Property="BorderBrush" Value="Firebrick"/>
+                                        </Style.Setters>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Trigger.Setters>
+                                                    <Setter Property="Opacity" Value="1"/>
+                                                    <Setter Property="Background" Value="GreenYellow"/>
+                                                </Trigger.Setters>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Image Source="..\..\Assets\directory_icon_open.png"
+                                       RenderOptions.BitmapScalingMode="HighQuality"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+        <!--Buttons-->
+        <!--Text-->
+        <Style TargetType="TextBlock"
+               x:Key="FBC_FolderPathTextBlockStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Margin" Value="1.5"/>
+                <Setter Property="Foreground" Value="Firebrick"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="MaxHeight" Value="30"/>
+                <Setter Property="FontSize" Value="11.5"/>
+                <Setter Property="TextOptions.TextRenderingMode" Value="Grayscale"/>
+                <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
+            </Style.Setters>
+        </Style>
+        <!--Text-->
+        <!--Borders-->
+        <Style TargetType="Border"
+               x:Key="FBC_StrokeBorderStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="BorderBrush" Value="Firebrick"/>
+                <Setter Property="BorderThickness" Value="1.5"/>
+                <Setter Property="Margin" Value="1.5"/>
+            </Style.Setters>
+        </Style>
+        <!--Borders-->
+    </UserControl.Resources>
+    <Grid Style="{StaticResource FBC_MainGridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Children>
+            <Border Grid.Row="0"
+                    Style="{StaticResource FBC_StrokeBorderStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.1*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Children>
+                        <Button Grid.Column="0"
+                                Style="{StaticResource FBC_OpenFolderBtnStyle}"
+                                Command="{Binding OpenFolderCommand}">
+                        </Button>
+                        <TextBlock Grid.Column="1"
+                                   Style="{StaticResource FBC_FolderPathTextBlockStyle}">
+                            <TextBlock.Inlines>
+                                <Run Text="Selected Path:"/>
+                                <LineBreak/>
+                                <Run Text="{Binding FolderPath, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                    </Grid.Children>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.Children>
+                    <Border Grid.Column="0"
+                            Style="{StaticResource FBC_StrokeBorderStyle}">
+                        <ContentControl prism:RegionManager.RegionName="FolderTreeRegion"/>
+                    </Border>
+                    <Border Grid.Column="1"
+                            Style="{StaticResource FBC_StrokeBorderStyle}">
+                        <ContentControl prism:RegionManager.RegionName="FolderViewRegion"/>
+                    </Border>
+                </Grid.Children>
+            </Grid>
+        </Grid.Children>
     </Grid>
 </UserControl>

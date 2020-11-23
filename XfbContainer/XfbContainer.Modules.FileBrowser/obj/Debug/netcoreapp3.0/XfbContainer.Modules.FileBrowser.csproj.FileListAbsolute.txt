@@ -18,3 +18,7 @@ E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\XfbContainer.Modules.FileBrowser.csproj.CopyComplete
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\XfbContainer.Modules.FileBrowser.dll
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\XfbContainer.Modules.FileBrowser.pdb
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\Views\Controls\FolderTreeControl.baml
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\Views\Controls\FolderTreeControl.g.cs
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\Views\Controls\FolderViewControl.baml
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\Views\Controls\FolderViewControl.g.cs

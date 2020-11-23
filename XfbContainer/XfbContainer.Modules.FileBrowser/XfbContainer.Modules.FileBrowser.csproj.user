@@ -13,5 +13,11 @@
     <Page Update="Views\Controls\DialogControl.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Controls\FolderTreeControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\FolderViewControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

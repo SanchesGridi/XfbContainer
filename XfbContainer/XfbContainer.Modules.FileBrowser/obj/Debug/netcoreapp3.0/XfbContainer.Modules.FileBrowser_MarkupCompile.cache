@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
 
-2-932419088
+4-2144130505
 
-5-422499384
+111158986453
 2082129229721
-Views\Controls\DialogControl.xaml;Views\Controls\FileBrowserControl.xaml;
+Views\Controls\DialogControl.xaml;Views\Controls\FileBrowserControl.xaml;Views\Controls\FolderTreeControl.xaml;Views\Controls\FolderViewControl.xaml;
 
 False
 

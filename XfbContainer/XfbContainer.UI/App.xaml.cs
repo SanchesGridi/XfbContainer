@@ -4,6 +4,7 @@ using Prism.Modularity;
 using XfbContainer.Modules.FileBrowser;
 using XfbContainer.UI.Infrastructure.Binders;
 using XfbContainer.UI.Views.Windows;
+using XfbContainer.WpfDomain.Services;
 
 namespace XfbContainer.UI
 {
@@ -27,7 +28,7 @@ namespace XfbContainer.UI
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterSingleton<ICleaner, GcCleaner>();
         }
         #endregion
 

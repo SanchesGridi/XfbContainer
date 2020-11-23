@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="XfbContainer.Modules.FileBrowser.Views.Controls.FolderTreeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:models="clr-namespace:XfbContainer.WpfDomain.Models;assembly=XfbContainer.WpfDomain"
+             mc:Ignorable="d"
+             x:Name="Folder_Tree_Control"
+             d:DesignHeight="590"
+             d:DesignWidth="195"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <!--FolderTreeView-->
+        <Style TargetType="TreeView"
+               x:Key="FTC_FolderTreeViewStyly">
+            <Style.Setters>
+                <Setter Property="VirtualizingPanel.VirtualizationMode" Value="Recycling"/>
+                <Setter Property="VirtualizingPanel.ScrollUnit" Value="Pixel"/>
+                <Setter Property="VirtualizingPanel.IsVirtualizing" Value="True"/>
+                <Setter Property="VirtualizingPanel.IsContainerVirtualizable" Value="True"/>
+                <Setter Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="True"/>
+                <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="Margin" Value="2.5"/>
+                <Setter Property="Background" Value="#010"/>
+                <Setter Property="ItemContainerStyle">
+                    <Setter.Value>
+                        <Style TargetType="TreeViewItem">
+                            <Setter Property="Focusable" Value="False"/>
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ItemTemplate">
+                    <Setter.Value>
+                        <HierarchicalDataTemplate DataType="{x:Type models:DirectoryModel}"
+                                                  ItemsSource="{Binding Directories, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <Grid>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                                        <i:InvokeCommandAction Command="{Binding ElementName=Folder_Tree_Control, Path=DataContext.ExpandCommand}"
+                                                               CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.15*"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.Children>
+                                    <Image Grid.Column="0"
+                                           MaxHeight="15"
+                                           Margin="2.5"
+                                           MaxWidth="15"
+                                           RenderOptions.BitmapScalingMode="HighQuality"
+                                           Source="..\..\Assets\directory_icon_view.png"/>
+                                    <TextBlock Grid.Column="1"
+                                               Margin="2.5"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               TextAlignment="Center"
+                                               TextWrapping="Wrap"
+                                               Foreground="Firebrick"
+                                               Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}, Path=DataContext.Name}"/>
+                                </Grid.Children>
+                            </Grid>
+                        </HierarchicalDataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+        <!--FolderTreeView-->
+    </UserControl.Resources>
+    <TreeView x:Name="Folder_Tree_View"
+              Style="{StaticResource FTC_FolderTreeViewStyly}"
+              ItemsSource="{Binding RootDirectorySource, UpdateSourceTrigger=PropertyChanged}"/>
+</UserControl>

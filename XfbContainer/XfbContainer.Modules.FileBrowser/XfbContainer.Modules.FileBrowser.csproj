@@ -5,6 +5,18 @@
     <AssemblyName>XfbContainer.Modules.FileBrowser</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\directory_icon_open.png" />
+    <None Remove="Assets\directory_icon_view.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\XfbContainer.WpfDomain\XfbContainer.WpfDomain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\directory_icon_open.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\directory_icon_view.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 </Project>

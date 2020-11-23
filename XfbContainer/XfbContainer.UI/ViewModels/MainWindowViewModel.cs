@@ -3,6 +3,7 @@ using Prism.Modularity;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using XfbContainer.UI.Infrastructure.Presenters;
+using XfbContainer.WpfDomain.Services;
 using XfbContainer.WpfDomain.ViewModels;
 
 namespace XfbContainer.UI.ViewModels.Windows
@@ -16,8 +17,9 @@ namespace XfbContainer.UI.ViewModels.Windows
         public MainWindowViewModel(
             IRegionManager regionManager,
             IModuleManager moduleManager,
-            IDialogService dialogService
-            ) : base(regionManager, moduleManager, dialogService)
+            IDialogService dialogService,
+            ICleaner cleaner
+            ) : base(regionManager, moduleManager, dialogService, cleaner)
         {
             _fileBrowserPresenter = new FileBrowserPresenter(_moduleManager, _regionManager);
 
