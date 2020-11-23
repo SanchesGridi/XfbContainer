@@ -3,11 +3,100 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         WindowStartupLocation="CenterScreen"
-        prism:ViewModelLocator.AutoWireViewModel="True"
         Title="Xfb Container"
-        Height="350"
-        Width="525">
+        Background="#111"
+        Height="750"
+        Width="925"
+        prism:ViewModelLocator.AutoWireViewModel="True">
+    <Window.Resources>
+        <!--MENU-->
+        <Style TargetType="MenuItem"
+               x:Key="MW_MenuItemStyle_External"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Foreground" Value="Red"/>
+                <Setter Property="BorderBrush" Value="OrangeRed"/>
+                <Setter Property="BorderThickness" Value="0.25"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="MenuItem"
+               x:Key="MW_MenuItemStyle_Internal"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Margin" Value="1.5"/>
+                <Setter Property="Background" Value="Black"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Menu"
+               x:Key="MW_MenuStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Padding" Value="1.5"/>
+                <Setter Property="Margin" Value="2.5"/>
+                <Setter Property="BorderThickness" Value="2.5"/>
+                <Setter Property="BorderBrush" Value="Firebrick"/>
+                <Setter Property="Background" Value="Black"/>
+                <Setter Property="ItemContainerStyle" Value="{StaticResource MW_MenuItemStyle_External}"/>
+            </Style.Setters>
+        </Style>
+        <!--MENU-->
+        <!--Borders-->
+        <Style TargetType="Border"
+               x:Key="MW_MainGridBorderStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Padding" Value="1.5"/>
+                <Setter Property="Margin" Value="2.5"/>
+                <Setter Property="BorderBrush" Value="Firebrick"/>
+                <Setter Property="BorderThickness" Value="2.5"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Border"
+               x:Key="MW_BorderSpliterStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Background" Value="Firebrick"/>
+                <Setter Property="MinWidth" Value="2.5"/>
+            </Style.Setters>
+        </Style>
+        <!--Borders-->
+    </Window.Resources>
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="FileBrowserRegion"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Children>
+            <Menu Grid.Row="0"
+                  Style="{StaticResource MW_MenuStyle}">
+                <MenuItem Header="Views">
+                    <MenuItem Header="File Browser"
+                              Style="{StaticResource MW_MenuItemStyle_Internal}"
+                              Command="{Binding SwitchFileBrowserCommand}"/>
+                    <MenuItem Header="Operation Panel"
+                              Style="{StaticResource MW_MenuItemStyle_Internal}"
+                              Command="{Binding OpenOperationPanelCommand}"/>
+                </MenuItem>
+            </Menu>
+            <Border Grid.Row="1"
+                    Style="{StaticResource MW_MainGridBorderStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="0.45*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Children>
+                        <ContentControl Grid.Column="0"
+                                        prism:RegionManager.RegionName="FileBrowserRegion"/>
+                        <Border Grid.Column="1" 
+                                Style="{StaticResource MW_BorderSpliterStyle}"/>
+                        <ContentControl Grid.Column="2"
+                                        prism:RegionManager.RegionName="OperationPanelRegion"/>
+                    </Grid.Children>
+                </Grid>
+            </Border>
+        </Grid.Children>
     </Grid>
 </Window>

@@ -1,6 +1,7 @@
 ﻿using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Regions;
+using Prism.Services.Dialogs;
 
 namespace XfbContainer.WpfDomain.ViewModels
 {
@@ -8,13 +9,16 @@ namespace XfbContainer.WpfDomain.ViewModels
     {
         protected readonly IRegionManager _regionManager;
         protected readonly IModuleManager _moduleManager;
+        protected readonly IDialogService _dialogService;
 
         public BaseViewModel(
             IRegionManager regionManager,
-            IModuleManager moduleManager)
+            IModuleManager moduleManager,
+            IDialogService dialogService)
         {
             _regionManager = regionManager;
             _moduleManager = moduleManager;
+            _dialogService = dialogService;
         }
     }
 }

@@ -1,11 +1,11 @@
-E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\bin\Debug\netcoreapp3.0\XfbContainer.CommonTypes.dll
-E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\obj\Debug\netcoreapp3.0\XfbContainer.WpfDomain.csprojAssemblyReference.cache
-E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\obj\Debug\netcoreapp3.0\XfbContainer.WpfDomain.AssemblyInfoInputs.cache
-E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\obj\Debug\netcoreapp3.0\XfbContainer.WpfDomain.AssemblyInfo.cs
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\bin\Debug\netcoreapp3.0\XfbContainer.WpfDomain.deps.json
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\bin\Debug\netcoreapp3.0\XfbContainer.WpfDomain.dll
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\bin\Debug\netcoreapp3.0\XfbContainer.WpfDomain.pdb
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\bin\Debug\netcoreapp3.0\XfbContainer.CommonTypes.dll
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\bin\Debug\netcoreapp3.0\XfbContainer.CommonTypes.pdb
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\obj\Debug\netcoreapp3.0\XfbContainer.WpfDomain.csprojAssemblyReference.cache
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\obj\Debug\netcoreapp3.0\XfbContainer.WpfDomain.AssemblyInfoInputs.cache
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\obj\Debug\netcoreapp3.0\XfbContainer.WpfDomain.AssemblyInfo.cs
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\obj\Debug\netcoreapp3.0\XfbContainer.WpfDomain.csproj.CoreCompileInputs.cache
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\obj\Debug\netcoreapp3.0\XfbContainer.WpfDomain.csproj.CopyComplete
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.WpfDomain\obj\Debug\netcoreapp3.0\XfbContainer.WpfDomain.dll

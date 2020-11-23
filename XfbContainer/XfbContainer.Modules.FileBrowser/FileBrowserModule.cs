@@ -2,6 +2,7 @@
 using Prism.Modularity;
 using Prism.Regions;
 using XfbContainer.CommonTypes.Extensions;
+using XfbContainer.Modules.FileBrowser.ViewModels.Controls;
 using XfbContainer.Modules.FileBrowser.Views.Controls;
 
 namespace XfbContainer.Modules.FileBrowser
@@ -18,7 +19,7 @@ namespace XfbContainer.Modules.FileBrowser
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterDialog<DialogControl, DialogControlViewModel>("DialogBox");
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using Prism.Ioc;
+using Prism.Modularity;
+using XfbContainer.Modules.FileBrowser;
 using XfbContainer.UI.Infrastructure.Binders;
 using XfbContainer.UI.Views.Windows;
 
@@ -35,6 +37,13 @@ namespace XfbContainer.UI
             base.ConfigureViewModelLocator();
 
             _viewModelsBinder.BindCommonViewModels();
+            _viewModelsBinder.BindFileBrowserModuleViewModels();
+        }
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            base.ConfigureModuleCatalog(moduleCatalog);
+
+            moduleCatalog.AddModule<FileBrowserModule>(InitializationMode.OnDemand);
         }
         #endregion
     }

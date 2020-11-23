@@ -6,7 +6,9 @@ E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\bin\Debug\
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\bin\Debug\netcoreapp3.0\XfbContainer.WpfDomain.pdb
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\bin\Debug\netcoreapp3.0\XfbContainer.CommonTypes.pdb
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\XfbContainer.Modules.FileBrowser.csprojAssemblyReference.cache
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\Views\Controls\DialogControl.baml
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\Views\Controls\FileBrowserControl.baml
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\Views\Controls\DialogControl.g.cs
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\Views\Controls\FileBrowserControl.g.cs
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\XfbContainer.Modules.FileBrowser_MarkupCompile.cache
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\XfbContainer.Modules.FileBrowser.g.resources
