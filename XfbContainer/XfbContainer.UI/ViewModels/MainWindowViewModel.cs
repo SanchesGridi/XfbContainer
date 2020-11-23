@@ -1,10 +1,15 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Modularity;
+using Prism.Regions;
+using XfbContainer.WpfDomain.ViewModels;
 
 namespace XfbContainer.UI.ViewModels.Windows
 {
-    public class MainWindowViewModel : BindableBase
+    public class MainWindowViewModel : BaseViewModel
     {
-        public MainWindowViewModel()
+        public MainWindowViewModel(
+            IRegionManager regionManager,
+            IModuleManager moduleManager
+            ) : base(regionManager, moduleManager)
         {
 
         }

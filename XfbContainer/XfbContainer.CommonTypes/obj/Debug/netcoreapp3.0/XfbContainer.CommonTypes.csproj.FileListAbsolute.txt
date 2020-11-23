@@ -1,0 +1,9 @@
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\bin\Debug\netcoreapp3.0\XfbContainer.CommonTypes.deps.json
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\bin\Debug\netcoreapp3.0\XfbContainer.CommonTypes.dll
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\bin\Debug\netcoreapp3.0\XfbContainer.CommonTypes.pdb
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcoreapp3.0\XfbContainer.CommonTypes.csprojAssemblyReference.cache
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcoreapp3.0\XfbContainer.CommonTypes.AssemblyInfoInputs.cache
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcoreapp3.0\XfbContainer.CommonTypes.AssemblyInfo.cs
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcoreapp3.0\XfbContainer.CommonTypes.csproj.CoreCompileInputs.cache
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcoreapp3.0\XfbContainer.CommonTypes.dll
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcoreapp3.0\XfbContainer.CommonTypes.pdb

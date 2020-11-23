@@ -4,6 +4,130 @@
     "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.UI\\XfbContainer.UI.csproj": {}
   },
   "projects": {
+    "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj",
+        "projectName": "XfbContainer.CommonTypes",
+        "projectPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj",
+        "projectName": "XfbContainer.Modules.FileBrowser",
+        "projectPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.Modules.FileBrowser\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.WpfDomain\\XfbContainer.WpfDomain.csproj": {
+                "projectPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.WpfDomain\\XfbContainer.WpfDomain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.UI\\XfbContainer.UI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +155,11 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj": {
+                "projectPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -66,6 +194,76 @@
               "privateAssets": "none"
             },
             "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.WpfDomain\\XfbContainer.WpfDomain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.WpfDomain\\XfbContainer.WpfDomain.csproj",
+        "projectName": "XfbContainer.WpfDomain",
+        "projectPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.WpfDomain\\XfbContainer.WpfDomain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.WpfDomain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj": {
+                "projectPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Prism.Unity": {
+              "target": "Package",
+              "version": "[7.2.0.1367, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App": {
               "privateAssets": "none"
             }
           },
