@@ -5,6 +5,7 @@ using Prism.Modularity;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using XfbContainer.Modules.FileBrowser.Presenters;
+using XfbContainer.WpfDomain.Commands;
 using XfbContainer.WpfDomain.Models;
 using XfbContainer.WpfDomain.Services;
 using XfbContainer.WpfDomain.ViewModels;
@@ -32,10 +33,12 @@ namespace XfbContainer.Modules.FileBrowser.ViewModels.Controls
             IRegionManager regionManager,
             IModuleManager moduleManager,
             IDialogService dialogService,
-            ICleaner cleaner
-            ) : base(regionManager, moduleManager, dialogService, cleaner)
+            ICleaner cleaner,
+            IViewProvider viewProvider,
+            IApplicationCommands applicationCommands
+            ) : base(regionManager, moduleManager, dialogService, cleaner, viewProvider, applicationCommands)
         {
-            _folderViewPresenter = new FolderViewPresenter(_regionManager);
+            _folderViewPresenter = new FolderViewPresenter(_regionManager, _viewProvider);
 
             ExpandCommand = new DelegateCommand<TreeViewItem>(this.ExpandCommandExecute);
         }

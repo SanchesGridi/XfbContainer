@@ -16,7 +16,6 @@ using Prism.Mvvm;
 using Prism.Regions;
 using Prism.Regions.Behaviors;
 using Prism.Services.Dialogs;
-using Prism.Unity;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -48,7 +47,7 @@ namespace XfbContainer.UI {
     /// <summary>
     /// App
     /// </summary>
-    public partial class App : Prism.Unity.PrismApplication {
+    public partial class App : Prism.DryIoc.PrismApplication {
         
         /// <summary>
         /// Application Entry Point.

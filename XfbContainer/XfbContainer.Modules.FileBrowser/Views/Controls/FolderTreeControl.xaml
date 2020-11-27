@@ -73,6 +73,6 @@
         <!--FolderTreeView-->
     </UserControl.Resources>
     <TreeView x:Name="Folder_Tree_View"
-              Style="{StaticResource FTC_FolderTreeViewStyly}"
-              ItemsSource="{Binding RootDirectorySource, UpdateSourceTrigger=PropertyChanged}"/>
+                  Style="{StaticResource FTC_FolderTreeViewStyly}"
+                  ItemsSource="{Binding RootDirectorySource, UpdateSourceTrigger=PropertyChanged}"/>
 </UserControl>

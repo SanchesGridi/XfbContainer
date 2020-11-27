@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="XfbContainer.Modules.FileBrowser.Views.Controls.FolderItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:XfbContainer.Modules.FileBrowser.ViewModels.Controls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:prism="http://prismlibrary.com/"
+             mc:Ignorable="d"
+             Margin="2.5"
+             MaxHeight="120"
+             MinHeight="120"
+             MaxWidth="115"
+             MinWidth="115"
+             d:DesignHeight="120"
+             d:DesignWidth="115"
+             prism:ViewModelLocator.AutoWireViewModel="False">
+    <UserControl.Resources>
+        <!--Images-->
+        <Style TargetType="Image"
+               x:Key="FIC_ImageStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Margin" Value="1"/>
+                <Setter Property="MaxHeight" Value="40"/>
+                <Setter Property="MaxWidth" Value="40"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+            </Style.Setters>
+        </Style>
+        <!--Images-->
+        <!--Text-->
+        <Style TargetType="TextBlock"
+               x:Key="FIC_TextBlockStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="TextAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+            </Style.Setters>
+        </Style>
+        <!--Text-->
+    </UserControl.Resources>
+    <Border BorderThickness="1.25"
+            BorderBrush="Firebrick">
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeftButtonDown">
+                <i:InvokeCommandAction Command="{Binding ClickCommand}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <Grid>
+            <Grid.Background>
+                <SolidColorBrush Color="{Binding Path=(vm:FolderItemControlViewModel.BackgroundColor), Mode=OneWay}"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.Children>
+                <Image Grid.Row="0"
+                       Style="{StaticResource FIC_ImageStyle}"
+                       Source="{Binding Path=(vm:FolderItemControlViewModel.ImageSource), Mode=OneWay}"/>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2.5*"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.Children>
+                        <ScrollViewer Grid.Row="0"
+                                      HorizontalScrollBarVisibility="Auto"
+                                      VerticalScrollBarVisibility="Disabled">
+                            <TextBlock FontSize="10"
+                                       TextWrapping="WrapWithOverflow"
+                                       Foreground="LimeGreen"
+                                       Style="{StaticResource FIC_TextBlockStyle}"
+                                       Text="{Binding Path=(vm:FolderItemControlViewModel.Name), Mode=OneWay}"/>
+                        </ScrollViewer>
+                        <TextBlock Grid.Row="1"
+                                   FontSize="10"
+                                   Foreground="Firebrick"
+                                   Style="{StaticResource FIC_TextBlockStyle}"
+                                   Text="{Binding StringFormat=Extension: {0},
+                                          Path=(vm:FolderItemControlViewModel.Extension),
+                                          Mode=OneWay, TargetNullValue={x:Null}}"/>
+                        <TextBlock Grid.Row="2"
+                                   FontSize="7.5"
+                                   Foreground="OrangeRed"
+                                   Style="{StaticResource FIC_TextBlockStyle}"
+                                   Text="{Binding StringFormat=Bytes: {0},
+                                          Path=(vm:FolderItemControlViewModel.BytesLength),
+                                          Mode=OneWay, TargetNullValue={x:Null}}"/>
+                    </Grid.Children>
+                </Grid>
+            </Grid.Children>
+        </Grid>
+    </Border>
+</UserControl>

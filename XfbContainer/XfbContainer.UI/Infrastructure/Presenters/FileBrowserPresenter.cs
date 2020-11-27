@@ -50,7 +50,8 @@ namespace XfbContainer.UI.Infrastructure.Presenters
             _region = _regionManager.Regions["FileBrowserRegion"].VerifyReferenceAndSet();
             _fileBrowserView = _region.Views.FirstOrDefault().VerifyReferenceAndSet();
 
-            _isFileBrowserLoaded = _isFileBrowserVisible = true;
+            _isFileBrowserLoaded = true;
+            _isFileBrowserVisible = true;
         }
     }
 }

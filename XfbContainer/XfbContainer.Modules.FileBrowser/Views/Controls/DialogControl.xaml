@@ -2,11 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
-             prism:ViewModelLocator.AutoWireViewModel="True"
              prism:Dialog.WindowStyle="{DynamicResource DC_WindowStyle}"
              Background="Black"
              Height="170"
-             Width="325">
+             Width="325"
+             prism:ViewModelLocator.AutoWireViewModel="True">
     <UserControl.Resources>
         <Style TargetType="Window"
                x:Key="DC_WindowStyle"

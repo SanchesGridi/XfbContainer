@@ -3,12 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        WindowStartupLocation="CenterScreen"
         Title="Xfb Container"
         Background="#111"
         Height="750"
         Width="925"
-        >
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <!--MENU-->
         <Style TargetType="MenuItem"
@@ -77,7 +76,7 @@
                               Command="{Binding SwitchFileBrowserCommand}"/>
                     <MenuItem Header="Operation Panel"
                               Style="{StaticResource MW_MenuItemStyle_Internal}"
-                              Command="{Binding OpenOperationPanelCommand}"/>
+                              Command="{Binding SwitchOperationPanelCommand}"/>
                 </MenuItem>
             </Menu>
             <Border Grid.Row="1"

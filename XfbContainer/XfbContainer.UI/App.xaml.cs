@@ -4,6 +4,7 @@ using Prism.Modularity;
 using XfbContainer.Modules.FileBrowser;
 using XfbContainer.UI.Infrastructure.Binders;
 using XfbContainer.UI.Views.Windows;
+using XfbContainer.WpfDomain.Commands;
 using XfbContainer.WpfDomain.Services;
 
 namespace XfbContainer.UI
@@ -29,6 +30,8 @@ namespace XfbContainer.UI
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<ICleaner, GcCleaner>();
+            containerRegistry.RegisterSingleton<IViewProvider, ViewProvider>();
+            containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
         }
         #endregion
 
@@ -39,12 +42,14 @@ namespace XfbContainer.UI
 
             _viewModelsBinder.BindCommonViewModels();
             _viewModelsBinder.BindFileBrowserModuleViewModels();
+            _viewModelsBinder.BindOperationPanelModuleViewModels();
         }
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             base.ConfigureModuleCatalog(moduleCatalog);
 
             moduleCatalog.AddModule<FileBrowserModule>(InitializationMode.OnDemand);
+            // todo operation panel ...
         }
         #endregion
     }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using XfbContainer.CommonTypes.Extensions;
@@ -16,18 +18,18 @@ namespace XfbContainer.Modules.FileBrowser.Presenters
     {
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
-        private readonly ICleaner _cleaner;
+        private readonly IViewProvider _viewProvider;
 
         private bool _showDilogOnNewRequest;
         private bool _isDirectoryOpened;
         private string _rootFolderPath;
         private IRegion _region;
 
-        public FolderTreePresenter(IRegionManager regionManager, IDialogService dialogService, ICleaner cleaner)
+        public FolderTreePresenter(IRegionManager regionManager, IDialogService dialogService, IViewProvider viewProvider)
         {
             _regionManager = regionManager;
             _dialogService = dialogService;
-            _cleaner = cleaner;
+            _viewProvider = viewProvider;
         }
 
         public string GetRootFolderPath()
@@ -100,7 +102,8 @@ namespace XfbContainer.Modules.FileBrowser.Presenters
 
             this.LoadFolderTree(folderPath);
 
-            _isDirectoryOpened = _showDilogOnNewRequest = true;
+            _isDirectoryOpened = true;
+            _showDilogOnNewRequest = true;
         }
         private void LoadFolderTree(string folderPath)
         {
@@ -113,11 +116,14 @@ namespace XfbContainer.Modules.FileBrowser.Presenters
             {
                 viewModel.DirectoryModel.Dispose();
 
-                _cleaner.ClearMemory();
+                var folderItems = _viewProvider.GetView<ListBox>(Application.Current.MainWindow, "Folder_View_ListBox").Items;
+                folderItems.Clear();
+
+                viewModel.ClearMemory();
             }
 
             viewModel.DirectoryModel = new DirectoryModel(_rootFolderPath);
-            viewModel.UpdateProperty("RootDirectorySource");
+            viewModel.UpdateFor("RootDirectorySource");
         }
     }
 }

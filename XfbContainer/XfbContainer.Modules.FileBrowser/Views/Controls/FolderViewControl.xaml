@@ -1,15 +1,60 @@
 ﻿<UserControl x:Class="XfbContainer.Modules.FileBrowser.Views.Controls.FolderViewControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:prism="http://prismlibrary.com/"
+             xmlns:controls="clr-namespace:XfbContainer.Modules.FileBrowser.Views.Controls"
              mc:Ignorable="d"
              d:DesignHeight="590"
              d:DesignWidth="400"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <UserControl.Resources>
-        
+        <!--FolderItem-->
+        <Style TargetType="controls:FolderItemControl"
+               x:Key="FVC_FolderItemStyle">
+            <Style.Setters>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style.Setters>
+        </Style>
+        <!--FolderItem-->
+        <!--FolderViewBox-->
+        <Style x:Key="FVC_FolderListBoxStyle"
+               x:Shared="False"
+               TargetType="ListBox">
+            <Style.Setters>
+                <Setter Property="Background" Value="{Binding}"/>
+                <Setter Property="Margin" Value="1.5"/>
+                <Setter Property="SelectionMode" Value="Single"/>
+                <Setter Property="VirtualizingPanel.IsVirtualizing" Value="True"/>
+                <Setter Property="VirtualizingPanel.VirtualizationMode" Value="Recycling"/>
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+                <Setter Property="ItemsPanel">
+                    <Setter.Value>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+        <!--FolderViewBox-->
+        <!--Borders-->
+        <Style TargetType="Border"
+               x:Key="FVC_BorderStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Margin" Value="1.5"/>
+                <Setter Property="Padding" Value="1.5"/>
+                <Setter Property="BorderThickness" Value="1.5"/>
+                <Setter Property="BorderBrush" Value="Firebrick"/>
+                <Setter Property="Background" Value="#010" />
+            </Style.Setters>
+        </Style>
+        <!--Borders-->
     </UserControl.Resources>
     <Grid Margin="2.5">
         <Grid.RowDefinitions>
@@ -17,12 +62,27 @@
             <RowDefinition Height="0.15*"/>
         </Grid.RowDefinitions>
         <Grid.Children>
-            <WrapPanel Grid.Row="0">
-                
-            </WrapPanel>
-            <Grid Grid.Row="1">
-                
-            </Grid>
+            <ListBox Grid.Row="0"
+                     x:Name="Folder_View_ListBox"
+                     Style="{StaticResource FVC_FolderListBoxStyle}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <ListBoxItem>
+                            <ListBoxItem.Content>
+                                <controls:FolderItemControl Style="{StaticResource FVC_FolderItemStyle}"/>
+                            </ListBoxItem.Content>
+                        </ListBoxItem>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Border Grid.Row="1"
+                    Style="{StaticResource FVC_BorderStyle}">
+                <Grid>
+                    <!--TODO-->
+                    
+                    <!--TODO-->
+                </Grid>
+            </Border>
         </Grid.Children>
     </Grid>
 </UserControl>

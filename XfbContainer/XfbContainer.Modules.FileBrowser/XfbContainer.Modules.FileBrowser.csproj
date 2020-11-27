@@ -9,6 +9,9 @@
     <None Remove="Assets\directory_icon_view.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="7.2.0.1367" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\XfbContainer.WpfDomain\XfbContainer.WpfDomain.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -18,5 +21,13 @@
     <Resource Include="Assets\directory_icon_view.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Assets\file_item.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\folder_item.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

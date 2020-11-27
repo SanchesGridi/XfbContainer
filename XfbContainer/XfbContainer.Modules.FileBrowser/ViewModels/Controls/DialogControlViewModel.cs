@@ -4,7 +4,7 @@ using XfbContainer.WpfDomain.ViewModels;
 
 namespace XfbContainer.Modules.FileBrowser.ViewModels.Controls
 {
-    public class DialogControlViewModel : DialogViewModel
+    public sealed class DialogControlViewModel : BaseDialogViewModel
     {
         private bool _dontShowAgain;
 
@@ -36,7 +36,7 @@ namespace XfbContainer.Modules.FileBrowser.ViewModels.Controls
 
             Parameters.Add("dont_show_again", DontShowAgain);
 
-            base.OnRequestClose(new DialogResult(result, Parameters));
+            this.OnRequestClose(new DialogResult(result, Parameters));
         }
     }
 }

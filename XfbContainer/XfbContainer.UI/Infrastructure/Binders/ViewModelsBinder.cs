@@ -18,5 +18,9 @@ namespace XfbContainer.UI.Infrastructure.Binders
             ViewModelLocationProvider.Register<FolderTreeControl, FolderTreeControlViewModel>();
             ViewModelLocationProvider.Register<FolderViewControl, FolderViewControlViewModel>();
         }
+        public void BindOperationPanelModuleViewModels()
+        {
+            // todo ...
+        }
     }
 }

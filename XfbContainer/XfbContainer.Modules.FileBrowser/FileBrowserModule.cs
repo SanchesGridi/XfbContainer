@@ -12,9 +12,9 @@ namespace XfbContainer.Modules.FileBrowser
         public void OnInitialized(IContainerProvider containerProvider)
         {
             containerProvider
-                .Resolve<IRegionManager>()
-                .VerifyReferenceAndSet("regionManager", "FileBrowserModule", "exception was thrown in method: [OnInitialized]")
-                .RegisterViewWithRegion("FileBrowserRegion", typeof(FileBrowserControl));
+              .Resolve<IRegionManager>()
+              .VerifyReferenceAndSet("regionManager", "FileBrowserModule", "Exception was thrown in method: [OnInitialized]")
+              .RegisterViewWithRegion("FileBrowserRegion", typeof(FileBrowserControl));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
