@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:controls="clr-namespace:XfbContainer.Modules.FileBrowser.Views.Controls"
+             xmlns:vm="clr-namespace:XfbContainer.Modules.FileBrowser.ViewModels.Controls"
              mc:Ignorable="d"
              d:DesignHeight="590"
              d:DesignWidth="400"
@@ -55,6 +56,21 @@
             </Style.Setters>
         </Style>
         <!--Borders-->
+        <!--TEXT-->
+        <Style TargetType="TextBlock"
+               x:Key="FVC_TextBlockStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="Margin" Value="1.5"/>
+                <Setter Property="Padding" Value="0.5"/>
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="Foreground" Value="Firebrick"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+            </Style.Setters>
+        </Style>
+        <!--TEXT-->
     </UserControl.Resources>
     <Grid Margin="2.5">
         <Grid.RowDefinitions>
@@ -78,9 +94,47 @@
             <Border Grid.Row="1"
                     Style="{StaticResource FVC_BorderStyle}">
                 <Grid>
-                    <!--TODO-->
-                    
-                    <!--TODO-->
+                    <!--TODO: buttons for commans-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.Children>
+                        <TextBlock Grid.Row="0"
+                                   Style="{StaticResource FVC_TextBlockStyle}">
+                            <TextBlock.Inlines>
+                                <Run Text="Selected folder path: "/>
+                                <Run Foreground="OrangeRed" 
+                                     Text="{Binding Path=DirectoryModel.FullName, Mode=OneWay}"/>
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                        <TextBlock Grid.Row="1"
+                                   Style="{StaticResource FVC_TextBlockStyle}">
+                            <TextBlock.Inlines>
+                                <Run Text="Selected folder name: "/>
+                                <Run Foreground="OrangeRed" 
+                                     Text="{Binding Path=DirectoryModel.Name, Mode=OneWay}"/>
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                        <TextBlock Grid.Row="2"
+                                   Style="{StaticResource FVC_TextBlockStyle}">
+                            <TextBlock.Inlines>
+                                <Run Text="Selected folder files count: "/>
+                                <Run Foreground="OrangeRed" 
+                                     Text="{Binding Path=SelectedFolderFilesCount, Mode=OneWay}"/>
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                        <TextBlock Grid.Row="3"
+                                   Style="{StaticResource FVC_TextBlockStyle}">
+                            <TextBlock.Inlines>
+                                <Run Text="Selected folder directories count: "/>
+                                <Run Foreground="OrangeRed" 
+                                     Text="{Binding Path=SelectedFolderDirectoriesCount, Mode=OneWay}"/>
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                    </Grid.Children>
                 </Grid>
             </Border>
         </Grid.Children>

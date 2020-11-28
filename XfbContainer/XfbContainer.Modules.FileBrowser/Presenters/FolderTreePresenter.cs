@@ -117,7 +117,7 @@ namespace XfbContainer.Modules.FileBrowser.Presenters
                 viewModel.DirectoryModel.Dispose();
 
                 var folderItems = _viewProvider.GetView<ListBox>(Application.Current.MainWindow, "Folder_View_ListBox").Items;
-                folderItems.Clear();
+                folderItems.Clear(); // TODO :asynchronously deleting each item (action: [re]loading folder tree view)
 
                 viewModel.ClearMemory();
             }

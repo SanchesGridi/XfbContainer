@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj",
+      "projectUniqueName": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj",
       "projectName": "XfbContainer.CommonTypes",
-      "projectPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj",
+      "projectPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\obj\\",
+      "outputPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Microsoft\\Xamarin\\NuGet\\",

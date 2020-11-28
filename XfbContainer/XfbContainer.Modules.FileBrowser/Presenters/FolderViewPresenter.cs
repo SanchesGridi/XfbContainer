@@ -92,14 +92,16 @@ namespace XfbContainer.Modules.FileBrowser.Presenters
             var view = ((FolderViewControl)_region.Views.FirstOrDefault()).VerifyReferenceAndSet();
             var viewModel = ((FolderViewControlViewModel)view.DataContext).VerifyReferenceAndSet();
             viewModel.DirectoryModel = model;
+            viewModel.UpdateFor("SelectedFolderFilesCount", "SelectedFolderDirectoriesCount");
 
             var folderItems = _viewProvider.GetView<ListBox>(Application.Current.MainWindow, "Folder_View_ListBox").Items;
             if (folderItems.Count > 0)
             {
-                folderItems.Clear();
+                folderItems.Clear(); // TODO :asynchronously deleting each item (action: switching in folder tree view)
                 viewModel.ClearMemory();
             }
 
+            // TODO: loading each element asynchronously
             foreach (var directory in viewModel.DirectoryModel.Directories)
             {
                 var ListBoxItem = new ListBoxItem
@@ -124,6 +126,5 @@ namespace XfbContainer.Modules.FileBrowser.Presenters
 
                 folderItems.Add(ListBoxItem);
             }
-        }
     }
 }

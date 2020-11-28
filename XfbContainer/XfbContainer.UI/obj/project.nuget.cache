@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GghS7D5APdk0wMwY4EtIPeqmHxtkr555UqMHIOoPOUJyWiSa22YIJDMAs2+UI+F91IR3iiVG3zDQCPQV2umRWQ==",
+  "dgSpecHash": "Kxiir508PCl32zPu9Xj15k2YPZgTerDiMwwmVeN/VIKphsWouwqTdTjAXaVMNlGfMZzM5oba8buvwZopTMclQA==",
   "success": true,
-  "projectFilePath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer\\XfbContainer.UI\\XfbContainer.UI.csproj",
+  "projectFilePath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.UI\\XfbContainer.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\commonservicelocator\\2.0.4\\commonservicelocator.2.0.4.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\dryioc.dll\\4.0.4\\dryioc.dll.4.0.4.nupkg.sha512",

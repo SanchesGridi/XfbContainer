@@ -18,7 +18,7 @@ namespace XfbContainer.WpfDomain.Extensions
         {
             dialogName.VerifyReference();
             var dialogParameters = new DialogParameters().AddOnInit(parameters);
-            var dialogCallback = (Action<IDialogResult>)((IDialogResult dialogResult) =>
+            Action<IDialogResult> dialogCallback = dialogResult =>
             {
                 if (dialogResult.Result == ButtonResult.OK)
                 {
