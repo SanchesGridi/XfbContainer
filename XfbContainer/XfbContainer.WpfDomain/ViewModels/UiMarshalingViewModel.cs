@@ -4,7 +4,6 @@ using Prism.Modularity;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using XfbContainer.CommonTypes.Extensions;
-using XfbContainer.WpfDomain.Commands;
 using XfbContainer.WpfDomain.Services;
 
 namespace XfbContainer.WpfDomain.ViewModels
@@ -18,18 +17,19 @@ namespace XfbContainer.WpfDomain.ViewModels
             IModuleManager moduleManager,
             IDialogService dialogService,
             ICleaner cleaner,
-            IViewProvider viewProvider,
-            IApplicationCommands applicationCommands
-            ) : base(regionManager, moduleManager, dialogService, cleaner, viewProvider, applicationCommands)
+            IViewProvider viewProvider
+            ) : base(regionManager, moduleManager, dialogService, cleaner, viewProvider)
         {
             _application = Application.Current;
         }
 
-        public virtual void MarshalAction<TAny>(Action<TAny> action, TAny argument)
+        public virtual void MarshalAction<TAny>(Action<TAny> action, TAny argument = default)
         {
-            action.VerifyReference();
-
-            _application.Dispatcher.Invoke(() => action.Invoke(argument));
+            _application.Dispatcher.Invoke(() => action.VerifyReferenceAndSet().Invoke(argument));
+        }
+        public virtual void MarshalAction(Action action)
+        {
+            _application.Dispatcher.Invoke(action.VerifyReferenceAndSet());
         }
     }
 }

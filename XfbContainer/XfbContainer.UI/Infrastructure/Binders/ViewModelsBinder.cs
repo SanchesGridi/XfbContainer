@@ -17,10 +17,7 @@ namespace XfbContainer.UI.Infrastructure.Binders
             ViewModelLocationProvider.Register<FileBrowserControl, FileBrowserControlViewModel>();
             ViewModelLocationProvider.Register<FolderTreeControl, FolderTreeControlViewModel>();
             ViewModelLocationProvider.Register<FolderViewControl, FolderViewControlViewModel>();
-        }
-        public void BindOperationPanelModuleViewModels()
-        {
-            // todo ...
+            ViewModelLocationProvider.Register<FolderItemControl, FolderItemControlViewModel>();
         }
     }
 }

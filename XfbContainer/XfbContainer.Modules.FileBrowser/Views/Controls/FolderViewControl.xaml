@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:controls="clr-namespace:XfbContainer.Modules.FileBrowser.Views.Controls"
-             xmlns:vm="clr-namespace:XfbContainer.Modules.FileBrowser.ViewModels.Controls"
              mc:Ignorable="d"
              d:DesignHeight="590"
              d:DesignWidth="400"
@@ -71,11 +70,24 @@
             </Style.Setters>
         </Style>
         <!--TEXT-->
+        <!--BUTTONS-->
+        <Style TargetType="Button"
+               x:Key="FVC_ButtonStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="MinWidth" Value="100"/>
+                <Setter Property="Background" Value="Black"/>
+                <Setter Property="Foreground" Value="Firebrick"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+            </Style.Setters>
+        </Style>
+        <!--BUTTONS-->
     </UserControl.Resources>
     <Grid Margin="2.5">
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
         <Grid.Children>
             <ListBox Grid.Row="0"
@@ -94,12 +106,11 @@
             <Border Grid.Row="1"
                     Style="{StaticResource FVC_BorderStyle}">
                 <Grid>
-                    <!--TODO: buttons for commans-->
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="1.2*"/>
+                        <RowDefinition Height="1.2*"/>
                     </Grid.RowDefinitions>
                     <Grid.Children>
                         <TextBlock Grid.Row="0"
@@ -118,22 +129,47 @@
                                      Text="{Binding Path=DirectoryModel.Name, Mode=OneWay}"/>
                             </TextBlock.Inlines>
                         </TextBlock>
-                        <TextBlock Grid.Row="2"
-                                   Style="{StaticResource FVC_TextBlockStyle}">
-                            <TextBlock.Inlines>
-                                <Run Text="Selected folder files count: "/>
-                                <Run Foreground="OrangeRed" 
-                                     Text="{Binding Path=SelectedFolderFilesCount, Mode=OneWay}"/>
-                            </TextBlock.Inlines>
-                        </TextBlock>
-                        <TextBlock Grid.Row="3"
-                                   Style="{StaticResource FVC_TextBlockStyle}">
-                            <TextBlock.Inlines>
-                                <Run Text="Selected folder directories count: "/>
-                                <Run Foreground="OrangeRed" 
-                                     Text="{Binding Path=SelectedFolderDirectoriesCount, Mode=OneWay}"/>
-                            </TextBlock.Inlines>
-                        </TextBlock>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.Children>
+                                <TextBlock Grid.Column="0"
+                                           Style="{StaticResource FVC_TextBlockStyle}">
+                                    <TextBlock.Inlines>
+                                        <Run Text="Selected folder files: "/>
+                                        <Run Foreground="OrangeRed" 
+                                             Text="{Binding Path=SelectedFolderFilesCount, Mode=OneWay}"/>
+                                    </TextBlock.Inlines>
+                                </TextBlock>
+                                <Button Grid.Column="1"
+                                        Content="Compute size"
+                                        Style="{StaticResource FVC_ButtonStyle}"
+                                        Command="{Binding ComputeFolderSizeCommand}"/>
+                            </Grid.Children>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.Children>
+                                <TextBlock Grid.Column="0"
+                                           Style="{StaticResource FVC_TextBlockStyle}">
+                                    <TextBlock.Inlines>
+                                        <Run xml:space="preserve"
+                                             Text="Selected folder  dirs: "/>
+                                        <Run Foreground="OrangeRed" 
+                                             Text="{Binding Path=SelectedFolderDirectoriesCount, Mode=OneWay}"/>
+                                    </TextBlock.Inlines>
+                                </TextBlock>
+                                <Button Grid.Column="1"
+                                        Content="Compute size [R]"
+                                        Style="{StaticResource FVC_ButtonStyle}"
+                                        Command="{Binding ComputeFolderSizeRecursiveCommand}"/>
+                            </Grid.Children>
+                        </Grid>
                     </Grid.Children>
                 </Grid>
             </Border>

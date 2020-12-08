@@ -43,7 +43,7 @@ namespace XfbContainer.CommonTypes.Extensions
         {
             @this.VerifyReference(argumentName, className, additionMessage);
 
-            return @this;
+            return @this; 
         }
         public static void VerifyCollectionNotNullOrEmpty<TAny>(this IEnumerable<TAny> @this, string argumentName = null, string className = null, string additionMessage = null)
         {

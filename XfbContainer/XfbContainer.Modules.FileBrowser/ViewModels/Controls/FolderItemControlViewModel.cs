@@ -1,7 +1,7 @@
 ﻿using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Prism.Commands;
 using XfbContainer.CommonTypes.Extensions;
 using XfbContainer.WpfDomain.Models;
 using XfbContainer.WpfDomain.ViewModels;
@@ -63,9 +63,24 @@ namespace XfbContainer.Modules.FileBrowser.ViewModels.Controls
                 return backgroundColor;
             }
         }
-        public ImageSource ImageSource
+        public ImageSource ImageSource { get; set; }
+        #endregion
+
+        public FolderItemControlViewModel(IFolderModel folderItem)
         {
-            get
+            _folderItem = folderItem.VerifyReferenceAndSet(nameof(folderItem), nameof(FolderItemControlViewModel), "Exception in \"constructor\" method");
+
+            this.InitializeImageSourceAsync().CtorAwait();
+        }
+
+        public IFolderModel GetItem()
+        {
+            return _folderItem;
+        }
+
+        private async Task InitializeImageSourceAsync()
+        {
+            await Task.Run(() =>
             {
                 string imagePath = null;
 
@@ -84,26 +99,11 @@ namespace XfbContainer.Modules.FileBrowser.ViewModels.Controls
                 using (var stream = new MemoryStream(bytes))
                 {
                     var source = BitmapFrame.Create(stream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
-                    return source;
+                    ImageSource = source;
+
+                    base.RaisePropertyChanged(nameof(ImageSource));
                 }
-            }
-        }
-        public DelegateCommand ClickCommand { get; }
-        #endregion
-
-        public FolderItemControlViewModel(IFolderModel folderItem)
-        {
-            _folderItem = folderItem.VerifyReferenceAndSet(nameof(folderItem), nameof(FolderItemControlViewModel), "Exception in \"constructor\" method");
-
-            ClickCommand = new DelegateCommand(this.ClickCommandExecute);
-        }
-
-        private void ClickCommandExecute()
-        {
-            if (_folderItem is DirectoryModel model)
-            {
-                // ...
-            }
+            });
         }
     }
 }

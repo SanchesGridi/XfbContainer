@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="XfbContainer.Modules.FileBrowser.Views.Controls.FolderDialogControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:Dialog.WindowStyle="{DynamicResource FDC_WindowStyle}"
+             Background="Black"
+             Height="170"
+             Width="325"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <Style TargetType="Window"
+               x:Key="FDC_WindowStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterOwner"/>
+                <Setter Property="ResizeMode" Value="NoResize"/>
+                <Setter Property="ShowInTaskbar" Value="False"/>
+                <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="TextBlock"
+               x:Key="FDC_TextBlockStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="MinWidth" Value="100"/>
+                <Setter Property="MinHeight" Value="30"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="Foreground" Value="Firebrick"/>
+            </Style.Setters>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Children>
+            <TextBlock Grid.Row="0"
+                       Style="{StaticResource FDC_TextBlockStyle}"
+                       Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="1"
+                       Style="{StaticResource FDC_TextBlockStyle}"
+                       Text="{Binding FilesCountMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="2"
+                       Style="{StaticResource FDC_TextBlockStyle}"
+                       Text="{Binding SubfoldersCountMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid.Children>
+    </Grid>
+</UserControl>

@@ -77,8 +77,8 @@ namespace XfbContainer.Modules.FileBrowser.Views.Controls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/XfbContainer.Modules.FileBrowser;V1.0.0.0;component/views/controls/foldertreecon" +
-                    "trol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/XfbContainer.Modules.FileBrowser;component/views/controls/foldertreecontrol.xaml" +
+                    "", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Controls\FolderTreeControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

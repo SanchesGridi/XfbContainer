@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:vm="clr-namespace:XfbContainer.Modules.FileBrowser.ViewModels.Controls"
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:prism="http://prismlibrary.com/"
              mc:Ignorable="d"
              Margin="2.5"
@@ -39,17 +38,13 @@
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="HorizontalAlignment" Value="Left"/>
                 <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                <Setter Property="FontSize" Value="10"/>
             </Style.Setters>
         </Style>
         <!--Text-->
     </UserControl.Resources>
     <Border BorderThickness="1.25"
             BorderBrush="Firebrick">
-        <i:Interaction.Triggers>
-            <i:EventTrigger EventName="MouseLeftButtonDown">
-                <i:InvokeCommandAction Command="{Binding ClickCommand}"/>
-            </i:EventTrigger>
-        </i:Interaction.Triggers>
         <Grid>
             <Grid.Background>
                 <SolidColorBrush Color="{Binding Path=(vm:FolderItemControlViewModel.BackgroundColor), Mode=OneWay}"/>
@@ -61,7 +56,7 @@
             <Grid.Children>
                 <Image Grid.Row="0"
                        Style="{StaticResource FIC_ImageStyle}"
-                       Source="{Binding Path=(vm:FolderItemControlViewModel.ImageSource), Mode=OneWay}"/>
+                       Source="{Binding Path=(vm:FolderItemControlViewModel.ImageSource), Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2.5*"/>
@@ -72,21 +67,17 @@
                         <ScrollViewer Grid.Row="0"
                                       HorizontalScrollBarVisibility="Auto"
                                       VerticalScrollBarVisibility="Disabled">
-                            <TextBlock FontSize="10"
-                                       TextWrapping="WrapWithOverflow"
-                                       Foreground="LimeGreen"
+                            <TextBlock Foreground="LimeGreen"
                                        Style="{StaticResource FIC_TextBlockStyle}"
                                        Text="{Binding Path=(vm:FolderItemControlViewModel.Name), Mode=OneWay}"/>
                         </ScrollViewer>
                         <TextBlock Grid.Row="1"
-                                   FontSize="10"
                                    Foreground="Firebrick"
                                    Style="{StaticResource FIC_TextBlockStyle}"
                                    Text="{Binding StringFormat=Extension: {0},
                                           Path=(vm:FolderItemControlViewModel.Extension),
                                           Mode=OneWay, TargetNullValue={x:Null}}"/>
                         <TextBlock Grid.Row="2"
-                                   FontSize="7.5"
                                    Foreground="OrangeRed"
                                    Style="{StaticResource FIC_TextBlockStyle}"
                                    Text="{Binding StringFormat=Bytes: {0},

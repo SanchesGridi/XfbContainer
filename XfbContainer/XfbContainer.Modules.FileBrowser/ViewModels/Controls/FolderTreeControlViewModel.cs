@@ -4,8 +4,7 @@ using Prism.Commands;
 using Prism.Modularity;
 using Prism.Regions;
 using Prism.Services.Dialogs;
-using XfbContainer.Modules.FileBrowser.Presenters;
-using XfbContainer.WpfDomain.Commands;
+using XfbContainer.Modules.FileBrowser.Infrastructure.Presenters;
 using XfbContainer.WpfDomain.Models;
 using XfbContainer.WpfDomain.Services;
 using XfbContainer.WpfDomain.ViewModels;
@@ -34,9 +33,8 @@ namespace XfbContainer.Modules.FileBrowser.ViewModels.Controls
             IModuleManager moduleManager,
             IDialogService dialogService,
             ICleaner cleaner,
-            IViewProvider viewProvider,
-            IApplicationCommands applicationCommands
-            ) : base(regionManager, moduleManager, dialogService, cleaner, viewProvider, applicationCommands)
+            IViewProvider viewProvider
+            ) : base(regionManager, moduleManager, dialogService, cleaner, viewProvider)
         {
             _folderViewPresenter = new FolderViewPresenter(_regionManager, _viewProvider);
 

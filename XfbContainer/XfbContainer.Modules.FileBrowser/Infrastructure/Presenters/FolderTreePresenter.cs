@@ -12,9 +12,9 @@ using XfbContainer.WpfDomain.Extensions;
 using XfbContainer.WpfDomain.Models;
 using XfbContainer.WpfDomain.Services;
 
-namespace XfbContainer.Modules.FileBrowser.Presenters
+namespace XfbContainer.Modules.FileBrowser.Infrastructure.Presenters
 {
-    public class FolderTreePresenter
+    public sealed class FolderTreePresenter
     {
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
@@ -50,7 +50,7 @@ namespace XfbContainer.Modules.FileBrowser.Presenters
                 _dialogService.ShowDefaultDialogBox(
                     dialogName: "DialogBox",
                     isModal: true,
-                    okAction: r =>
+                    okAction: r => 
                     {
                         _showDilogOnNewRequest = !r.Parameters.GetValue<bool>("dont_show_again");
                         this.OpenFolder(updateAction);
@@ -114,10 +114,12 @@ namespace XfbContainer.Modules.FileBrowser.Presenters
 
             if (viewModel.DirectoryModel != null)
             {
+                // TODO: asynchronously deleting items (action: [re]loading folder tree view)
+
                 viewModel.DirectoryModel.Dispose();
 
                 var folderItems = _viewProvider.GetView<ListBox>(Application.Current.MainWindow, "Folder_View_ListBox").Items;
-                folderItems.Clear(); // TODO :asynchronously deleting each item (action: [re]loading folder tree view)
+                folderItems.Clear(); 
 
                 viewModel.ClearMemory();
             }

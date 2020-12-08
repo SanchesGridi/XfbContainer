@@ -3,7 +3,7 @@ using XfbContainer.WpfDomain.Models.Base;
 
 namespace XfbContainer.WpfDomain.Models
 {
-    public class FileModel : NotificationModel, IFolderModel
+    public sealed class FileModel : NotificationModel, IFolderModel
     {
         private readonly FileInfo _file;
 

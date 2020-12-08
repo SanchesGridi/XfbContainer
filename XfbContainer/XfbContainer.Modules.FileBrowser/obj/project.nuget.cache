@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OBELHwPurM/nZDdCpzBR4r9i9xfrqoeaKiT/AK2u9D42dnERf+BubJYnP0Iq/FPOEy74r+Rl3jbQRGEVrke5UA==",
+  "dgSpecHash": "cVIu2f6cBorRS+K6N/jI6LrT/X/Vzw/N49SWQkFkIjBAbvWce0ks5O5jX3313W4N6XTtOChmEKgllKlOMyZapw==",
   "success": true,
-  "projectFilePath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj",
+  "projectFilePath": "E:\\Projects\\Cs\\Development\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\commonservicelocator\\2.0.4\\commonservicelocator.2.0.4.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\prism.core\\7.2.0.1367\\prism.core.7.2.0.1367.nupkg.sha512",

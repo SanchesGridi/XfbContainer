@@ -4,17 +4,17 @@
 library
 C#
 .cs
-E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\
+E:\Projects\Cs\Development\XfbContainer\XfbContainer.Modules.FileBrowser\obj\Debug\netcoreapp3.0\
 XfbContainer.Modules.FileBrowser
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
 
-5-1351262556
+61103018872
 
-151809554476
-205-1841641704
-Views\Controls\DialogControl.xaml;Views\Controls\FileBrowserControl.xaml;Views\Controls\FolderItemControl.xaml;Views\Controls\FolderTreeControl.xaml;Views\Controls\FolderViewControl.xaml;
+181341467059
+205-188173656
+Views\Controls\DialogControl.xaml;Views\Controls\FileBrowserControl.xaml;Views\Controls\FolderDialogControl.xaml;Views\Controls\FolderItemControl.xaml;Views\Controls\FolderTreeControl.xaml;Views\Controls\FolderViewControl.xaml;
 
 True
 

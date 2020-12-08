@@ -2,12 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
-        prism:ViewModelLocator.AutoWireViewModel="True"
+        WindowStartupLocation="CenterScreen"
         Title="Xfb Container"
         Background="#111"
         Height="750"
         Width="925"
-        WindowStartupLocation="CenterScreen">
+        prism:ViewModelLocator.AutoWireViewModel="True">
     <Window.Resources>
         <!--MENU-->
         <Style TargetType="MenuItem"
@@ -61,6 +61,19 @@
             </Style.Setters>
         </Style>
         <!--Borders-->
+        <!--Text-->
+        <Style TargetType="TextBlock"
+               x:Key="MW_TextBlockStyle"
+               x:Shared="False">
+            <Style.Setters>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style.Setters>
+        </Style>
+        <!--Text-->
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -74,9 +87,6 @@
                     <MenuItem Header="File Browser"
                               Style="{StaticResource MW_MenuItemStyle_Internal}"
                               Command="{Binding SwitchFileBrowserCommand}"/>
-                    <MenuItem Header="Operation Panel"
-                              Style="{StaticResource MW_MenuItemStyle_Internal}"
-                              Command="{Binding SwitchOperationPanelCommand}"/>
                 </MenuItem>
             </Menu>
             <Border Grid.Row="1"
@@ -92,8 +102,23 @@
                                         prism:RegionManager.RegionName="FileBrowserRegion"/>
                         <Border Grid.Column="1" 
                                 Style="{StaticResource MW_BorderSpliterStyle}"/>
-                        <ContentControl Grid.Column="2"
-                                        prism:RegionManager.RegionName="OperationPanelRegion"/>
+                        <ContentControl Grid.Column="2">
+                            <!--prism:RegionManager.RegionName="YourModuleRegion"-->
+                            <ContentControl.Content>
+                                <TextBlock Style="{StaticResource MW_TextBlockStyle}">
+                                    <TextBlock.Inlines>
+                                        <Run Text="File Browser"
+                                             Foreground="Firebrick"/>
+                                        <LineBreak/>
+                                        <Run Text="Your Module Can Be Placed Here"
+                                             Foreground="LimeGreen"/>
+                                        <LineBreak/>
+                                        <Run Text="Open For Extension"
+                                             Foreground="Orange"/>
+                                    </TextBlock.Inlines>
+                                </TextBlock>
+                            </ContentControl.Content>
+                        </ContentControl>
                     </Grid.Children>
                 </Grid>
             </Border>

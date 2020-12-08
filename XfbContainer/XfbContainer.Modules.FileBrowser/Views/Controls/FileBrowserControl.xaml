@@ -122,7 +122,8 @@
                             <TextBlock.Inlines>
                                 <Run Text="Selected Root Path:"/>
                                 <LineBreak/>
-                                <Run Text="{Binding FolderPath, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Run Foreground="OrangeRed"
+                                     Text="{Binding FolderPath, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
                             </TextBlock.Inlines>
                         </TextBlock>
                     </Grid.Children>

@@ -20,6 +20,7 @@ namespace XfbContainer.Modules.FileBrowser
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterDialog<DialogControl, DialogControlViewModel>("DialogBox");
+            containerRegistry.RegisterDialog<FolderDialogControl, FolderDialogControlViewModel>("FolderOptionsBox");
         }
     }
 }

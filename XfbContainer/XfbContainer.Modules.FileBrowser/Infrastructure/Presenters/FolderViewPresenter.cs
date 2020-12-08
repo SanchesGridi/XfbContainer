@@ -11,9 +11,9 @@ using XfbContainer.WpfDomain.Models;
 using XfbContainer.WpfDomain.Services;
 using XfbContainer.WpfDomain.ViewModels;
 
-namespace XfbContainer.Modules.FileBrowser.Presenters
+namespace XfbContainer.Modules.FileBrowser.Infrastructure.Presenters
 {
-    public class FolderViewPresenter
+    public sealed class FolderViewPresenter
     {
         private readonly IRegionManager _regionManager;
         private readonly IViewProvider _viewProvider;
@@ -87,7 +87,7 @@ namespace XfbContainer.Modules.FileBrowser.Presenters
 
             _isFolderViewLoaded = true;
         }
-        private void LoadFolderView(DirectoryModel model)
+        private async void LoadFolderView(DirectoryModel model)
         {
             var view = ((FolderViewControl)_region.Views.FirstOrDefault()).VerifyReferenceAndSet();
             var viewModel = ((FolderViewControlViewModel)view.DataContext).VerifyReferenceAndSet();
@@ -97,34 +97,48 @@ namespace XfbContainer.Modules.FileBrowser.Presenters
             var folderItems = _viewProvider.GetView<ListBox>(Application.Current.MainWindow, "Folder_View_ListBox").Items;
             if (folderItems.Count > 0)
             {
-                folderItems.Clear(); // TODO :asynchronously deleting each item (action: switching in folder tree view)
-                viewModel.ClearMemory();
-            }
-
-            // TODO: loading each element asynchronously
-            foreach (var directory in viewModel.DirectoryModel.Directories)
-            {
-                var ListBoxItem = new ListBoxItem
-                {
-                    Content = new FolderItemControl
+                await Application.Current.Dispatcher.Invoke(async () => await Task.Run(() =>
+                    viewModel.MarshalAction(() =>
                     {
-                        DataContext = new FolderItemControlViewModel(directory)
-                    }
-                };
-
-                folderItems.Add(ListBoxItem);
+                        folderItems.Clear();
+                        viewModel.ClearMemory();
+                    })
+                ));
             }
-            foreach (var file in viewModel.DirectoryModel.Files)
+
+            await Application.Current.Dispatcher.Invoke(async () => await Task.Run(() =>
             {
-                var ListBoxItem = new ListBoxItem
+                foreach (var directory in viewModel.DirectoryModel.Directories)
                 {
-                    Content = new FolderItemControl
+                    viewModel.MarshalAction(() =>
                     {
-                        DataContext = new FolderItemControlViewModel(file)
-                    }
-                };
+                        var ListBoxItem = new ListBoxItem
+                        {
+                            Content = new FolderItemControl
+                            {
+                                DataContext = new FolderItemControlViewModel(directory)
+                            }
+                        };
 
-                folderItems.Add(ListBoxItem);
-            }
+                        folderItems.Add(ListBoxItem);
+                    });
+                }
+                foreach (var file in viewModel.DirectoryModel.Files)
+                {
+                    viewModel.MarshalAction(() =>
+                    {
+                        var ListBoxItem = new ListBoxItem
+                        {
+                            Content = new FolderItemControl
+                            {
+                                DataContext = new FolderItemControlViewModel(file)
+                            }
+                        };
+
+                        folderItems.Add(ListBoxItem);
+                    });
+                }
+            }));
+        }
     }
 }

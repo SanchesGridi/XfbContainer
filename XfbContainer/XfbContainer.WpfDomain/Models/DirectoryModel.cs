@@ -6,7 +6,7 @@ using XfbContainer.WpfDomain.Models.Base;
 
 namespace XfbContainer.WpfDomain.Models
 {
-    public class DirectoryModel : NotificationModel, IFolderModel, IDisposable
+    public sealed class DirectoryModel : NotificationModel, IFolderModel, IDisposable
     {
         private readonly DirectoryInfo _directory;
 

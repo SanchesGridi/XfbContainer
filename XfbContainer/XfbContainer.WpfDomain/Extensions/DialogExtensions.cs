@@ -32,7 +32,7 @@ namespace XfbContainer.WpfDomain.Extensions
                 {
                     closeAction?.Invoke(dialogResult);
                 }
-            });
+            };
 
             if (isModal)
             {
