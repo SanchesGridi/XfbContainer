@@ -924,11 +924,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Cs\\Development\\XfbContainer\\XfbContainer.UI\\XfbContainer.UI.csproj",
+      "projectUniqueName": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.UI\\XfbContainer.UI.csproj",
       "projectName": "XfbContainer.UI",
-      "projectPath": "E:\\Projects\\Cs\\Development\\XfbContainer\\XfbContainer.UI\\XfbContainer.UI.csproj",
+      "projectPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.UI\\XfbContainer.UI.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Cs\\Development\\XfbContainer\\XfbContainer.UI\\obj\\",
+      "outputPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.UI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Microsoft\\Xamarin\\NuGet\\",
@@ -949,8 +949,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "E:\\Projects\\Cs\\Development\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj": {
-              "projectPath": "E:\\Projects\\Cs\\Development\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj"
+            "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj": {
+              "projectPath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.Modules.FileBrowser\\XfbContainer.Modules.FileBrowser.csproj"
             }
           }
         }

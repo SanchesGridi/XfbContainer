@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CPA55AQxoWYZuXL4ytZ/3GlgoDNO5P7fi3FaifRE5qVm253qH5kR/Z43A5GHd2pec+YtQxvTu5ZbITz8d5bxRQ==",
+  "dgSpecHash": "T7SJaLpkq934ZoJ9J6U7LmHt3Hy1PuNm0sMIAbn1lgLiCWLyc960rCLsS8E5rN/8MbnWjPTRMcMAR+7X2B05Tg==",
   "success": true,
-  "projectFilePath": "E:\\Projects\\Cs\\Development\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj",
+  "projectFilePath": "E:\\MyRepos\\XfbContainer\\XfbContainer\\XfbContainer.CommonTypes\\XfbContainer.CommonTypes.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
