@@ -73,11 +73,6 @@ namespace XfbContainer.Modules.FileBrowser.ViewModels.Controls
             this.InitializeImageSourceAsync().CtorAwait();
         }
 
-        public IFolderModel GetItem()
-        {
-            return _folderItem;
-        }
-
         private async Task InitializeImageSourceAsync()
         {
             await Task.Run(() =>

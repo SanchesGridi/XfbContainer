@@ -15,3 +15,4 @@ E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcorea
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcoreapp3.0\XfbContainer.CommonTypes.csproj.CoreCompileInputs.cache
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcoreapp3.0\XfbContainer.CommonTypes.dll
 E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcoreapp3.0\XfbContainer.CommonTypes.pdb
+E:\MyRepos\XfbContainer\XfbContainer\XfbContainer.CommonTypes\obj\Debug\netcoreapp3.0\XfbContainer.CommonTypes.csprojAssemblyReference.cache
